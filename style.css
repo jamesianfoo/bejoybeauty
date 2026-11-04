@@ -113,10 +113,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: linear-gradient(90deg, var(--story-a), var(--story-b));
 }
 .story__title { font-size: clamp(56px, 7vw, 110px); line-height: 1; margin-bottom: clamp(48px, 5vw, 72px); }
-.story__body { max-width: 1180px; margin: 0 auto; display: grid; gap: clamp(28px, 3.3vw, 46px); justify-items: center; }
-.story__body p { font-size: clamp(19px, 2.34vw, 34px); line-height: 1.36; }
+.story__body { max-width: 760px; margin: 0 auto; display: grid; gap: clamp(22px, 2.4vw, 32px); justify-items: center; }
+.story__body p { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.8; }
 .scrub .w { opacity: .18; }
-.story__strong { font-weight: 700; margin-top: clamp(16px, 3vw, 46px); }
+.story__body .story__strong { font-weight: 700; font-size: clamp(19px, 1.8vw, 25px); margin-top: clamp(12px, 2vw, 28px); }
 .btn {
   position: relative; display: inline-grid; place-items: center; overflow: hidden;
   margin-top: clamp(32px, 6vw, 90px);
@@ -187,7 +187,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .step__num { position: absolute; top: 0; right: 0; font: 400 clamp(56px, 6vw, 96px)/1 var(--f-display); color: var(--brown); opacity: .14; }
 .step__label { font: 500 12px/1 var(--f-sans); letter-spacing: .18em; text-transform: uppercase; color: var(--brown); }
 .step__name { font-family: var(--f-display); font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; color: var(--brown); padding-right: clamp(72px, 7.5vw, 120px); }  /* clear of the big step number */
-:lang(zh) .step__name { word-break: keep-all; }  /* break at the space, never inside 头皮护理液 */
+.step__name { white-space: pre-line; }  /* zh names are "English\n中文" */
 .step__desc { font-family: var(--f-display); font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; color: var(--brown); max-width: 40ch; }
 .step__sub { margin: 18px 0 0; display: flex; align-items: center; gap: 14px; font: 500 12px/1 var(--f-sans); letter-spacing: .18em; text-transform: uppercase; color: var(--brown); }
 .step__sub::after { content: ""; flex: 1; height: 1px; background: rgba(102, 76, 52, .2); }
@@ -224,13 +224,16 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ---------- Reviews ---------- */
 .reviews { background: #F7E4C9; padding: clamp(80px, 10vw, 140px) var(--gutter); }
-.reviews__grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); }
+.reviews__grid { max-width: 1180px; margin: 0 auto; columns: 3 300px; column-gap: clamp(16px, 2vw, 28px); }
 .review {
-  margin: 0; padding: clamp(28px, 3vw, 40px); display: grid; align-content: space-between; gap: 28px; min-height: 260px;
+  margin: 0 0 clamp(16px, 2vw, 28px); break-inside: avoid; padding: clamp(28px, 3vw, 40px); display: grid; gap: 24px;
   background: rgba(255, 250, 241, .55); box-shadow: 0 0 0 1px rgba(102, 76, 52, .12); color: var(--brown-deep);
 }
 .review__photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
-.review blockquote { margin: 0; font-family: var(--f-display); font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; }
+.review blockquote { margin: 0; font-family: var(--f-display); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.6; }
+.review blockquote p { margin: 0 0 .8em; }
+.review blockquote p:last-child { margin-bottom: 0; }
+.review strong { font-weight: 700; color: var(--brown); }
 .review blockquote::before { content: "“"; display: block; font-size: 56px; line-height: .6; color: var(--brown); opacity: .4; margin-bottom: 10px; }
 .review figcaption { font: 500 13px/1.4 var(--f-sans); letter-spacing: .06em; opacity: .75; }
 
@@ -240,6 +243,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .buy .btn { margin-top: 0; min-width: 240px; color: var(--brown-deep); border-color: var(--brown-deep); }
 .buy .btn::before { background: var(--brown-deep); }
 .buy .btn:hover span, .buy .btn:focus-visible span { color: var(--peach); }
+.buy .btn.is-soon { opacity: .45; cursor: default; }
+.buy .btn.is-soon::before { display: none; }
+.buy .btn.is-soon:hover span { color: var(--brown-deep); }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--peach); color: var(--brown-deep); font-family: var(--f-sans); padding: clamp(56px, 7vw, 100px) var(--gutter) 32px; }
@@ -276,7 +282,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   .step__media { position: relative; top: 0; }
   .points { grid-template-columns: 1fr; }
   .shot__frame { aspect-ratio: 4 / 5; }
-  .reviews__grid { grid-template-columns: 1fr; }
   .journey__track { grid-template-columns: 1fr; padding-left: 36px; }
   .journey__line { left: 7px; right: auto; top: 8px; bottom: 8px; width: 1px; height: auto; }
   .journey__fill { transform-origin: top; }
