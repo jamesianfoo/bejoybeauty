@@ -61,11 +61,16 @@
       newsInput.focus();
       return;
     }
-    if (news.getAttribute('action')) return; // provider configured: submit natively
-    e.preventDefault(); // preview mode: no provider yet, nothing is sent
-    news.classList.add('is-done');
-    newsMsg.dataset.key = 'news.ok';
-    newsMsg.textContent = t('news.ok');
+    e.preventDefault();
+    const btn = news.querySelector('button');
+    const say = k => { newsMsg.dataset.key = k; newsMsg.textContent = t(k); };
+    btn.disabled = true;
+    // Brevo sign-up form (list + welcome automation are set up in Brevo)
+    fetch(news.action + '?isAjax=1', { method: 'POST', body: new FormData(news) })
+      .then(r => r.json())
+      .then(d => { if (!d.success) throw d; news.classList.add('is-done'); say('news.ok'); })
+      .catch(() => { news.classList.add('is-error'); say('news.fail'); })
+      .finally(() => { btn.disabled = false; });
   });
 
   /* ---------- Smooth scroll ---------- */

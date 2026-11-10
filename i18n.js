@@ -9,7 +9,8 @@ window.I18N = {
   en: {
     'meta.title': 'BEJOY — Healthy hair begins at the Root',
     'news.invalid': 'Please enter a valid email address.',
-    'news.ok': 'Thank you, you’re on the list.'
+    'news.ok': 'Thank you, you’re on the list.',
+    'news.fail': 'Something went wrong. Please try again.'
   },
 
   zh: {
@@ -84,6 +85,7 @@ window.I18N = {
     'news.submit': '订阅',
     'news.invalid': '请输入有效的电子邮箱地址。',
     'news.ok': '谢谢！你已成功订阅。',
+    'news.fail': '出了点问题，请稍后再试。',
     'f.shop': '选购',
     'f.shampoo': 'Scalp Revival Shampoo',
     'f.tonic': 'Scalp Revival Tonic 头皮护理液',

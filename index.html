@@ -197,12 +197,14 @@
 
         <!-- Newsletter: set action to the mailing-list provider's form URL (see notes from the designer).
              Until it's set, submitting only shows the thank-you state — nothing is sent anywhere. -->
-        <form class="news" action="" method="post" novalidate>
+        <form class="news" action="https://7baf2ef2.sibforms.com/serve/MUIFAJu1SyCCFL4oEH8k1-_n-arv3kwCnndz8c3lQLlmWOXZupFGIEHSVqIk2yIRo7NahnG5-1BKZUzlSoj1jYO-OCkXK1Gq0RjOtPcuks_rtAYPifnxDc1YJxJOYC-qUzmv5l2cG8pyROs6a5lUDoV9e-s-MvmZkYBT9Jphq1xCLW3C1DXlwoUla_CSW49ZKvchoRBWJdPToNsNkQ==" method="post" novalidate>
           <label class="news__label" for="news-email" data-i18n="news.title">Stay in Touch with BEJOY</label>
           <div class="news__row">
-            <input id="news-email" name="email" type="email" placeholder="Your email" autocomplete="email" required data-i18n-attr="placeholder:news.placeholder">
+            <input id="news-email" name="EMAIL" type="email" placeholder="Your email" autocomplete="email" required data-i18n-attr="placeholder:news.placeholder">
             <button type="submit"><span data-i18n="news.submit">Subscribe</span></button>
           </div>
+          <input type="text" name="email_address_check" value="" hidden tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="locale" value="en">
           <p class="news__msg" role="status" aria-live="polite"></p>
         </form>
       </div>
