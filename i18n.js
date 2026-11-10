@@ -76,7 +76,7 @@ window.I18N = {
 
     'buy.title': '购买渠道',
     'buy.shopee': '前往 Shopee 购买',
-    'buy.lazada': 'Lazada · 即将上线',
+    'buy.lazada': '前往 Lazada 购买',
 
     'footer.tag': '健康秀发，始于发根。',
     'news.title': '与 BEJOY 保持联系',
