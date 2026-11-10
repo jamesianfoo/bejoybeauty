@@ -23,9 +23,9 @@ window.I18N = {
     'story.p2': '这些真实的声音，让我有了创立 BEJOY 的念头——希望用温和的日常护理，陪伴更多人从照顾头皮开始，好好照顾自己。',
     'story.strong': '健康秀发，始于发根。',
 
-    'series.1': '头皮',
-    'series.2': '焕活',
-    'series.3': '系列',
+    'series.1': 'Scalp',
+    'series.2': 'Revival',
+    'series.3': 'Series',
 
     'prod.shampoo.desc': '一款温和的防脱洗发露，在清洁的同时保持头皮与秀发水润。',
     'prod.tonic.desc': '轻盈免洗的头皮护理液，清爽滋养头皮，帮助秀发呈现更强韧、丰盈的状态。配方易于吸收，不留残留感，让头皮护理从洗发后延续至日常。',
